@@ -1,0 +1,50 @@
+{
+  "allProducts": [
+    {
+      "productName": "Markers",
+      "productPrice": "2",
+      "productStock": "2",
+      "productDescription": "good product",
+      "productCategory": "Electronics",
+      "productImage": "markers.jpg",
+      "id": 1
+    },
+    {
+      "productName": "One Plus 8",
+      "productImage": "oneplus.jpg",
+      "productPrice": "50000",
+      "productStock": "5",
+      "productDescription": "Good One",
+      "productCategory": "Electronics",
+      "id": 3
+    },
+    {
+      "productName": "Pencils",
+      "productImage": "pencils.jpg",
+      "productPrice": "25",
+      "productStock": "5",
+      "productDescription": "This is a good product",
+      "productCategory": "Stationary",
+      "id": 4
+    },
+    {
+      "productName": "Books",
+      "productImage": "books.jpg",
+      "productPrice": "50",
+      "productStock": "5",
+      "productDescription": "Good One",
+      "productCategory": "Stationary",
+      "id": 5
+    }
+  ],
+  "allPersons": [
+    {
+      "id": "1",
+      "userName": "hemanth",
+      "password": "60",
+      "repassword": "60",
+      "email": "hemanth@gmail.com",
+      "mobilenumber": "7093552414"
+    }
+  ]
+}
