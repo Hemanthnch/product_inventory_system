@@ -148,9 +148,17 @@ class EditProduct extends React.Component {
             padding: '10px',
             
             margin: '100px',
-            
-            
         }
+            const mystyle = {
+                color: "Black",
+                backgroundColor: "white",
+                padding: "10px",
+                width: "400px",
+                display: "inline-block",
+                margin: "20px",
+                border: "15px solid blueviolet"
+            };
+        
         if(this.props.location.state === undefined){
             return (
                 <div>
@@ -160,45 +168,44 @@ class EditProduct extends React.Component {
         }
         return ( 
             <div>
-                <h1>Edit Product with id : {this.props.location.state.myid}  </h1>
+                <h1>Edit Product with Id : {this.props.location.state.myid}  </h1>
                 <div>
-                <h3>Edit Product</h3>
                 
-                <form >
                 
-                    <h3>Id: 
-                    <input type="text" value={this.state.id} readOnly></input></h3>
+                <form style={mystyle}>
+                <h1>Edit Product</h1>
+                    <h3>Id : </h3>
+                    <input type="text" value={this.state.id} readOnly></input>
                     
                     
-                    <h3>Product Name: 
-                    <input type='text' id="productName" value={this.state.productName}  onChange={this.getProductName} onBlur={this.getProductNameError}></input></h3>
+                    <h3>Product Name: </h3>
+                    <input type='text' id="productName" value={this.state.productName}  onChange={this.getProductName} onBlur={this.getProductNameError}></input>
                     {this.state.productnameerror}
                     
-                    <h3>Product Price :
-                    <input type='text' id="productPrice" value={this.state.productPrice}  onChange={this.getProductPrice} onBlur={this.getProductPriceError}></input></h3>
+                    <h3>Product Price :</h3>
+                    <input type='text' id="productPrice" value={this.state.productPrice}  onChange={this.getProductPrice} onBlur={this.getProductPriceError}></input>
                     {this.state.productpriceerror}
 
-                    <h3>Product Stock : 
-                    <input type='number' id="productStock" value={this.state.productStock}  onChange={this.getProductStock} onBlur={this.getProductStockError}></input></h3>
+                    <h3>Product Stock : </h3>
+                    <input type='number' id="productStock" value={this.state.productStock}  onChange={this.getProductStock} onBlur={this.getProductStockError}></input>
                     {this.state.productstockerror}
 
-                    <h3>Product Description : 
-                    <input type='text' id="productDescription" value={this.state.productDescription}  onChange={this.getProductDescription} onBlur={this.getProductDescriptionError}></input></h3>
+                    <h3>Product Description : </h3>
+                    <input type='text' id="productDescription" value={this.state.productDescription}  onChange={this.getProductDescription} onBlur={this.getProductDescriptionError}></input>
                     {this.state.productdescriptionerror}
 
-                    <h3 for="cat">Product Category : 
+                    <h3 for="cat">Product Category : </h3>
                     <select name="category" id="productCategory" onChange={this.getProductCategory} onBlur={this.getProductCategoryError}>
                         <option value={this.state.productCategory}></option>
-                        
                         <option value="Electronics" onChange={this.getProductCategory}>Electronics</option>
                         <option value="stationary" onChange={this.getProductCategory}>Stationary</option>
                         <option value="Groceries" onChange={this.getProductCategory}>Groceries</option>
                         <option value="Plumbing" onChange={this.getProductCategory}>Plumbing</option>
                         
-                    </select></h3>
+                    </select>
                     <br></br>
-
-                    <button type="button" onClick={this.editProduct} style={{backgroundColor:"orange"}}>Edit Product</button>
+                    <br></br>
+                    <button type="button" onClick={this.editProduct} style={{backgroundColor:"green"}}>Edit Product</button>
                     
                     
                 </form>
