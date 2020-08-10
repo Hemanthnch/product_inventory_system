@@ -61,11 +61,11 @@ class AddProduct extends React.Component {
             return false
         }
         this.setState({
-            productNameError:'',
-            productPriceError:'',
-            productStockError:'',
-            productDescriptionError:'',
-            productCategoryError:''
+            productnameerror:'',
+            productpriceerror:'',
+            productstockerror:'',
+            productdescriptionerror:'',
+            productcategoryerror:''
         })
         return true
 

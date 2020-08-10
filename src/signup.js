@@ -34,8 +34,11 @@ class SignUp extends React.Component {
         console.log(event)
         console.log(event.target)
         console.log(event.target.value)
+        
         this.setState({userName:event.target.value})
-        this.checkValidation(event)
+        
+        
+        this.checkValidation()
     }
     getPassword=(event)=>{
         this.setState({password:event.target.value})
@@ -81,23 +84,26 @@ class SignUp extends React.Component {
         let repasswordError=''
         let emailError=''
         let mobilenumberError=''
-
+       
         if(event==='userName' && this.state.userName===''){
+            console.log("utghyutfgvbhjuiytfgvbhyutfgvbhjuyt")
             userNameError=<p style={{color:'red'}}>User Name is Required</p>
         }
-        if(event==='password' && this.state.password===''){
+        else if(event==='password' && this.state.password===''){
             passwordError=<p style={{color:'red'}}>Password is Required</p>
         }
-        if(event==='repassword' && (this.state.repassword==='' ||this.state.password !=this.state.repassword)){
+       else if(event==='repassword' && (this.state.repassword==='' ||this.state.password !=this.state.repassword)){
             repasswordError=<p style={{color:'red'}}>Re-Password is Mismatching</p>
         }
-        if(event==='email' && this.state.email===''){
+       else if(event==='email' && this.state.email===''){
             emailError=<p style={{color:'red'}}>Email is Required</p>
         }
-        if(event==='mobilenumber' && this.state.mobilenumber===''){
+       else if(event==='mobilenumber' && this.state.mobilenumber===''){
             mobilenumberError=<p style={{color:'red'}}>Mobile Number is Required</p>
         }
         if(userNameError||passwordError||repasswordError||emailError||mobilenumberError){
+           
+            
             this.setState({
                 usernameerror:userNameError,
                 passworderror:passwordError,
@@ -108,12 +114,14 @@ class SignUp extends React.Component {
             })
             return false
         }
+        
         this.setState({
-            userNameError:'',
-            passwordError:'',
-            repasswordError:'',
-            emailError:'',
-            mobilenumberError:'',
+          
+            usernameerror:'',
+            passworderror:'',
+            repassworderror:'',
+            emailerror:'',
+            mobilenumbererror:'',
             buttonStatus:false
         })
         return true

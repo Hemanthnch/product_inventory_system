@@ -59,11 +59,11 @@ class EditProduct extends React.Component {
             return false
         }
         this.setState({
-            productNameError:'',
-            productPriceError:'',
-            productStockError:'',
-            productDescriptionError:'',
-            productCategoryError:''
+            productnameerror:'',
+            productpriceerror:'',
+            productstockerror:'',
+            productdescriptionerror:'',
+            productcategoryerror:''
         })
         return true
 
@@ -165,7 +165,7 @@ class EditProduct extends React.Component {
                 <h3>Edit Product</h3>
                 
                 <form >
-                <table border="1" style={{align:"center"}}>
+                
                     <h3>Id: 
                     <input type="text" value={this.state.id} readOnly></input></h3>
                     
@@ -200,7 +200,7 @@ class EditProduct extends React.Component {
 
                     <button type="button" onClick={this.editProduct} style={{backgroundColor:"orange"}}>Edit Product</button>
                     
-                    </table>
+                    
                 </form>
                 
             </div>
