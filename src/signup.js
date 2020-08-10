@@ -4,13 +4,13 @@ class SignUp extends React.Component {
     constructor(props){
         super(props)
             this.state={
-               name:'',
+               userName:'',
                password:'',
                repassword:'',
                email:'',
                mobilenumber:'',
 
-               nameerror:'',
+               usernameerror:'',
                passworderror:'',
                repassworderror:'',
                emailerror:'',
@@ -30,30 +30,34 @@ class SignUp extends React.Component {
             this.setState({emailExists:false});
         }, 2000)
     }
-    getName=(event)=>{
+    getUserName=(event)=>{
         console.log(event)
         console.log(event.target)
         console.log(event.target.value)
-        this.setState({name:event.target.value})
-        this.checkValidation('name')
+        this.setState({userName:event.target.value})
+        this.checkValidation(event)
     }
     getPassword=(event)=>{
         this.setState({password:event.target.value})
+        this.checkValidation('password')
         
     }
     getRePassword=(event)=>{
         this.setState({repassword:event.target.value})
+        this.checkValidation('repassword')
     }
     getEmail=(event)=>{
         this.setState({email:event.target.value})
+        this.checkValidation('email')
     }
     getMobileNumber=(event)=>{
         this.setState({mobilenumber:event.target.value})
+        this.checkValidation('mobilenumber')
     }
 
-    getNameError=(event)=>{
-        this.setState({name:event.target.value})
-        this.checkValidation('name')
+    getUserNameError=(event)=>{
+        this.setState({userName:event.target.value})
+        this.checkValidation('userName')
     }
     getPasswordError=(event)=>{
         this.setState({password:event.target.value})
@@ -72,14 +76,14 @@ class SignUp extends React.Component {
         this.checkValidation('mobilenumber')
     }
     checkValidation=(event)=>{
-        let nameError=''
+        let userNameError=''
         let passwordError=''
         let repasswordError=''
         let emailError=''
         let mobilenumberError=''
 
-        if(event==='name' && this.state.name===''){
-            nameError=<p style={{color:'red'}}>User Name is Required</p>
+        if(event==='userName' && this.state.userName===''){
+            userNameError=<p style={{color:'red'}}>User Name is Required</p>
         }
         if(event==='password' && this.state.password===''){
             passwordError=<p style={{color:'red'}}>Password is Required</p>
@@ -93,9 +97,9 @@ class SignUp extends React.Component {
         if(event==='mobilenumber' && this.state.mobilenumber===''){
             mobilenumberError=<p style={{color:'red'}}>Mobile Number is Required</p>
         }
-        if(nameError||passwordError||repasswordError||emailError||mobilenumberError){
+        if(userNameError||passwordError||repasswordError||emailError||mobilenumberError){
             this.setState({
-                nameerror:nameError,
+                usernameerror:userNameError,
                 passworderror:passwordError,
                 repassworderror:repasswordError,
                 emailerror:emailError,
@@ -105,7 +109,7 @@ class SignUp extends React.Component {
             return false
         }
         this.setState({
-            nameError:'',
+            userNameError:'',
             passwordError:'',
             repasswordError:'',
             emailError:'',
@@ -116,8 +120,8 @@ class SignUp extends React.Component {
     }
     addPerson=(e)=>{
         
-        // e.preventDefault();
-            axios.get('http://localhost:3000/allPersons/?q='+this.state.name).then((res)=>{
+        e.preventDefault();
+            axios.get('http://localhost:3000/allPersons/?q='+this.state.userName).then((res)=>{
                 console.log(res.data[0])
                 if(res.data[0]){
                    this.setState({usernameExists:true});
@@ -132,13 +136,13 @@ class SignUp extends React.Component {
                            this.initialstate();
                         }else{
                             var personRequestBody={
-                                "name":this.state.name,
+                                "userName":this.state.userName,
                                 "password":this.state.password,
                                 "repassword":this.state.repassword,
                                 "email":this.state.email,
                                 "mobilenumber":this.state.mobilenumber
                                      }
-                                axios.post('http://localhost:3000/userDetails',personRequestBody).then((res)=>{
+                                axios.post('http://localhost:3000/allPersons',personRequestBody).then((res)=>{
                                 console.log(res.data);
                                 this.setState({usernameExists:false});
                                 this.setState({emailExists:false});
@@ -170,12 +174,12 @@ class SignUp extends React.Component {
                     this.state.emailExists &&
                     <p style={{color:'red'}}><b>Email Aready exists</b></p>
                 }
-                <form style={mystyle} onSubmit={this.addPerson}>
+                <form style={mystyle}>
 
                     <h3>Enter  User Name </h3>
                     
-                    <input type="text" id="name" onChange={this.getName} onBlur={this.getNameError}></input>
-                    {this.state.nameerror}
+                    <input type="text" id="userName" onChange={this.getUserName} onBlur={this.getUserNameError}></input>
+                    {this.state.usernameerror}
                     <br></br>
 
                     <h3>Enter Password </h3>
@@ -198,7 +202,7 @@ class SignUp extends React.Component {
                     {this.state.mobilenumbererror}
                     <br></br>
                     <br></br>
-                    <button type="button"  style={{backgroundColor:"cyan"}}>Sign Up</button>
+                    <button type="button" onClick={this.addPerson} style={{backgroundColor:"cyan"}}>Sign Up</button>
                 </form>
             </div>
          );

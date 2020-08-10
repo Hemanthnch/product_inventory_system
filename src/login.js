@@ -31,7 +31,7 @@ class Login extends React.Component {
     
     
     getLogin=(event)=>{
-        event.preventDefault();
+        // event.preventDefault();
         
         axios.get('http://localhost:3000/allPersons/?q='+this.state.userName).then((res)=>{
             console.log(res.data[0]);

@@ -19,22 +19,13 @@
       "id": 3
     },
     {
-      "productName": "Pencils",
-      "productImage": "pencils.jpg",
-      "productPrice": "25",
+      "productName": "Pens",
+      "productImage": "pens.jpg",
+      "productPrice": "50",
       "productStock": "5",
       "productDescription": "This is a good product",
       "productCategory": "Stationary",
       "id": 4
-    },
-    {
-      "productName": "Books",
-      "productImage": "books.jpg",
-      "productPrice": "50",
-      "productStock": "5",
-      "productDescription": "Good One",
-      "productCategory": "Stationary",
-      "id": 5
     }
   ],
   "allPersons": [
@@ -45,6 +36,22 @@
       "repassword": "60",
       "email": "hemanth@gmail.com",
       "mobilenumber": "7093552414"
+    },
+    {
+      "name": "sravanth",
+      "password": "123",
+      "repassword": "123",
+      "email": "sravanth@gmail.com",
+      "mobilenumber": "7093552414",
+      "id": "T0mgrl5"
+    },
+    {
+      "userName": "ayyangar",
+      "password": "123",
+      "repassword": "123",
+      "email": "ayya@gmail.com",
+      "mobilenumber": "123456789",
+      "id": "SyAsRXS"
     }
   ]
 }
