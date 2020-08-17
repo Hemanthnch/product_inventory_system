@@ -1,93 +1,96 @@
 import React from 'react';
 import axios from 'axios';
+import NavigationBar from './navbar';
 // import Box from '@material-ui/core/Box';
 class Login extends React.Component {
-    constructor(){
+    constructor() {
         super();
-        this.state={
-            userName:'',
-            password:'',
-            loginStatus:false,
+        this.state = {
+            userName: '',
+            password: '',
+            loginStatus: false,
 
-            userNameError:'',
-            passwordError:''
+            userNameError: '',
+            passwordError: ''
         }
     }
-    componentWillMount(){
-        if(localStorage.getItem('loggedIn')){
+    componentWillMount() {
+        if (localStorage.getItem('loggedIn')) {
             localStorage.removeItem('loggedIn');
+        }
     }
-}
-    initialstate=()=>{
+    initialstate = () => {
         setTimeout(() => {
             this.setState({ loginStatus: false });
         }, 2000)
     }
-    initialstateregisterd=()=>{
+    initialstateregisterd = () => {
         setTimeout(() => {
             this.setState({ isRegistered: false });
         }, 2000)
     }
-    
-    
-    getLogin=(event)=>{
-        // event.preventDefault();
-        
-        axios.get('http://localhost:3000/allPersons/?q='+this.state.userName).then((res)=>{
+
+
+    getLogin = (event) => {
+        event.preventDefault();
+
+        axios.get('http://localhost:3000/allPersons/?q=' + this.state.userName).then((res) => {
             console.log(res.data[0]);
-            if(res.data[0]){
-               if((res.data[0].userName === this.state.userName && res.data[0].password === this.state.password)||(res.data[0].email === this.state.username && res.data[0].password === this.state.password)){
-                   localStorage.setItem('loggedIn',true);
-                   this.props.history.push('/home');
-                }else{
-                   this.setState({loginStatus:true});
-                   this.initialstate();
+            if (res.data[0]) {
+                if ((res.data[0].userName === this.state.userName && res.data[0].password === this.state.password) || (res.data[0].email === this.state.username && res.data[0].password === this.state.password)) {
+                    localStorage.setItem('loggedIn', true);
+                    this.props.history.push('/');
+                } else {
+                    this.setState({ loginStatus: true });
+                    this.initialstate();
                 }
-            }else{
-               this.setState({loginStatus:true});
-               this.initialstate();
+            } else {
+                this.setState({ loginStatus: true });
+                this.initialstate();
             }
-          
-        })  
+
+        })
     }
-    getUserName=(event)=>{
-        this.setState({userName:event.target.value})
-    }
-    getPassword=(event)=>{
-        this.setState({password:event.target.value})
-    }
-    getUserNameError=(event)=>{
-        this.setState({userName:event.target.value})
+    getUserName = (event) => {
+        this.setState({ userName: event.target.value })
         this.checkValidation('userName')
     }
-    getPassword=(event)=>{
-        this.setState({password:event.target.value})
+    getPassword = (event) => {
+        this.setState({ password: event.target.value })
         this.checkValidation('password')
     }
-    checkValidation=(event)=>{
-        let userNameError='';
-        let passwordError='';
-        if(event==='userName' && this.state.userName ===''){
-            userNameError=<p style={{color:'red'}}>Username is required</p>;
+    getUserNameError = (event) => {
+        this.setState({ userName: event.target.value })
+        this.checkValidation('userName')
+    }
+    getPasswordError = (event) => {
+        this.setState({ password: event.target.value })
+        this.checkValidation('password')
+    }
+    checkValidation = (event) => {
+        let userNameError = '';
+        let passwordError = '';
+        if (event === 'userName' && this.state.userName === '') {
+            userNameError = <p style={{ color: 'red' }}>Username is required</p>;
         }
-        if(event==='password' && this.state.password ===''){
-            passwordError=<p style={{color:'red'}}>Password is required</p>
+        if (event === 'password' && this.state.password === '') {
+            passwordError = <p style={{ color: 'red' }}>Password is required</p>
         }
         if (userNameError || passwordError) {
-           this.setState({
-               userNameError: userNameError,
-               passwordError: passwordError,
-           })
-           return false
-       }
-       this.setState({
-           userNameError: '',
-           passwordError: '',
-       })
-       return true
+            this.setState({
+                userNameError: userNameError,
+                passwordError: passwordError,
+            })
+            return false
+        }
+        this.setState({
+            userNameError: '',
+            passwordError: '',
+        })
+        return true
     }
-    
-    render() { 
+
+    render() {
         const mystyle = {
             color: "Black",
             backgroundColor: "white",
@@ -96,15 +99,15 @@ class Login extends React.Component {
             display: "inline-block",
             margin: "20px",
             border: "15px solid blueviolet"
-          };
-        return ( 
-            
+        };
+        return (
+
             <div>
-                
-                <form style={mystyle} onSubmit={this.getLogin}>
+                <NavigationBar></NavigationBar>
+                <form style={mystyle} >
                     <h1>Login</h1>
-                    { this.state.loginStatus &&
-                        <p style={{color:'red'}}><b>Invalid Login Credentials</b></p>
+                    {this.state.loginStatus &&
+                        <p style={{ color: 'red' }}><b>Invalid Login Credentials</b></p>
                     }
                     <h3>Enter the User Name </h3>
                     <input type="text" required onChange={this.getUserName} onBlur={this.getUserNameError}></input>
@@ -116,12 +119,12 @@ class Login extends React.Component {
 
                     <br></br>
                     <br></br>
-                    <input type="submit" style={{backgroundColor:"cyan"}}></input>
+                    <button type="submit" onClick={this.getLogin} style={{ backgroundColor: "cyan" }}>Login</button>
                 </form>
-                
+
             </div>
-         );
+        );
     }
 }
- 
+
 export default Login;

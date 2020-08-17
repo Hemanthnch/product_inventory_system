@@ -2,8 +2,10 @@
 .column {
   float: left;
   width: 23%;
+  height:23%;
   padding: 0 5px;
   border: 10%;
+  margin-top:20px;
 }
 
 /* Remove extra left and right margins, due to padding */
@@ -30,6 +32,6 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   text-align: left;
-  background-color: cyan;
+  background-color:cornflowerblue;
   border:10%;
 }

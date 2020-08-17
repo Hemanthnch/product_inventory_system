@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 class LogOut extends React.Component {
-    
-    componentWillMount(){
+
+    componentWillMount() {
         localStorage.removeItem('loggedIn')
         this.props.history.push('/')
     }
-    render() { 
-       
-        return ( 
+    render() {
 
-           <div></div>
-         );
+        return (
+
+            <div></div>
+        );
     }
 }
- 
+
 export default LogOut;

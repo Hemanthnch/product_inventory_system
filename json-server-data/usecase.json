@@ -16,15 +16,24 @@
       "productStock": "5",
       "productDescription": "Good One",
       "productCategory": "Electronics",
+      "id": 2
+    },
+    {
+      "productName": "Pencils",
+      "productPrice": "60",
+      "productStock": "223",
+      "productDescription": "Good One",
+      "productCategory": "Stationary",
+      "productImage": "pencils.jpg",
       "id": 3
     },
     {
-      "productName": "Pens",
-      "productImage": "pens.jpg",
-      "productPrice": "50",
+      "productName": "Washing Machine",
+      "productPrice": "30000",
       "productStock": "5",
-      "productDescription": "This is a good product",
-      "productCategory": "Stationary",
+      "productDescription": "Good One",
+      "productCategory": "Electronics",
+      "productImage": "washingmachine.jpg",
       "id": 4
     }
   ],
@@ -52,6 +61,14 @@
       "email": "ayya@gmail.com",
       "mobilenumber": "123456789",
       "id": "SyAsRXS"
+    },
+    {
+      "userName": "prafful",
+      "password": "123",
+      "repassword": "123",
+      "email": "prafful@gmail.com",
+      "mobilenumber": "7896541230",
+      "id": "D5y_Ktt"
     }
   ]
 }
