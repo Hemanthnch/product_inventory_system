@@ -170,7 +170,7 @@ class AddProduct extends React.Component {
                         <br></br>
 
                         <h4>Product Image: </h4>
-                        <input type="file" onChange={this.getImage} multiple accept='image/*' />
+                        <input type="file" id="productImage" onChange={this.getImage} multiple accept='image/*' />
 
                         <br></br>
 

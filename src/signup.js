@@ -212,7 +212,7 @@ class SignUp extends React.Component {
                     {this.state.mobilenumbererror}
                     <br></br>
                     <br></br>
-                    <button type="button" onClick={this.addPerson} style={{ backgroundColor: "cyan" }}>Sign Up</button>
+                    <button type="submit" onClick={this.addPerson} style={{ backgroundColor: "cyan" }}>Sign Up</button>
                 </form>
             </div>
         );

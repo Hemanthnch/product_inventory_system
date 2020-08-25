@@ -110,11 +110,11 @@ class Login extends React.Component {
                         <p style={{ color: 'red' }}><b>Invalid Login Credentials</b></p>
                     }
                     <h3>Enter the User Name </h3>
-                    <input type="text" required onChange={this.getUserName} onBlur={this.getUserNameError}></input>
+                    <input type="text" required id="userName" onChange={this.getUserName} onBlur={this.getUserNameError}></input>
                     {this.state.usernameError}
 
                     <h3>Enter the Password </h3>
-                    <input type="password" required onChange={this.getPassword} onBlur={this.getPasswordError}></input>
+                    <input type="password" required id="password" onChange={this.getPassword} onBlur={this.getPasswordError}></input>
                     {this.state.passwordError}
 
                     <br></br>

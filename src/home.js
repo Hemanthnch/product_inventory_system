@@ -68,7 +68,6 @@ class Home extends React.Component {
                     deleteId={this.deleteProductWithId}
                     editId={this.editProductWithId}
                 >
-
                 </HomeDetail>
 
             );
@@ -87,7 +86,7 @@ class Home extends React.Component {
             state: { myid: id }
         })
     }
-    getSearch = (e) => {
+    getSearch = (e) => {    
         let searchV = e.target.value
         if (searchV === '') {
             this.getAllProducts()
@@ -95,7 +94,7 @@ class Home extends React.Component {
         this.setState({ searchValue: searchV })
         console.log(searchV);
         let searchF = this.state.originalProduct.filter(f => {
-            return f.productName.toLowerCase().match(searchV.toLowerCase())
+            return (f.productName.toLowerCase().match(searchV.toLowerCase()) || f.productCategory.toLowerCase().match(searchV.toLowerCase()))
         })
         console.log(searchF);
         this.setState({ products: searchF })
@@ -117,11 +116,11 @@ class Home extends React.Component {
                 <NavigationBar></NavigationBar>
                 <div>
                     <label>Search : </label>
-                    <input type="text" onChange={this.getSearch}></input>
+                    <input type="text" id="search" onChange={this.getSearch}></input>
                 </div>
                 <br></br>
                 {loggedIn &&
-                    <button onClick={this.openAddProduct} style={topnav}>Add Product</button>}
+                    <button id="buttonClicked" onClick={this.openAddProduct} style={topnav}>Add Product</button>}
                 <br></br>
                 <br></br>
 

@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches Snapshot 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "color": "#f2f2f2",
+        "font": "17px",
+        "overflow": "hidden",
+      }
+    }
+  >
+    <h1
+      style={
+        Object {
+          "color": "black",
+        }
+      }
+    >
+      Product Inventory System
+    </h1>
+    <ul
+      style={
+        Object {
+          "listStyleType": "none",
+        }
+      }
+    >
+      <li
+        style={
+          Object {
+            "backgroundColor": "cyan",
+            "color": "black",
+            "display": "inline",
+            "float": "right",
+            "margin": "5px",
+            "padding": "5px",
+          }
+        }
+      >
+        <a
+          href="/signup"
+          onClick={[Function]}
+          style={
+            Object {
+              "textDecoration": "none",
+            }
+          }
+        >
+          Sign Up
+        </a>
+      </li>
+      <li
+        style={
+          Object {
+            "backgroundColor": "cyan",
+            "color": "black",
+            "display": "inline",
+            "float": "right",
+            "margin": "5px",
+            "padding": "5px",
+          }
+        }
+      >
+        <a
+          href="/login"
+          onClick={[Function]}
+          style={
+            Object {
+              "textDecoration": "none",
+            }
+          }
+        >
+          Login
+        </a>
+      </li>
+    </ul>
+  </div>
+  <form
+    style={
+      Object {
+        "backgroundColor": "white",
+        "border": "15px solid blueviolet",
+        "color": "Black",
+        "display": "inline-block",
+        "margin": "20px",
+        "padding": "10px",
+        "width": "400px",
+      }
+    }
+  >
+    <h1>
+      Login
+    </h1>
+    <h3>
+      Enter the User Name 
+    </h3>
+    <input
+      id="userName"
+      onBlur={[Function]}
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+    <h3>
+      Enter the Password 
+    </h3>
+    <input
+      id="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      required={true}
+      type="password"
+    />
+    
+    <br />
+    <br />
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "cyan",
+        }
+      }
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</div>
+`;
+
+exports[`mathes Snapshot 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "backgroundColor": "blue",
+        "color": "#f2f2f2",
+        "font": "17px",
+        "overflow": "hidden",
+      }
+    }
+  >
+    <h1
+      style={
+        Object {
+          "color": "black",
+        }
+      }
+    >
+      Product Inventory System
+    </h1>
+    <ul
+      style={
+        Object {
+          "listStyleType": "none",
+        }
+      }
+    >
+      <li
+        style={
+          Object {
+            "backgroundColor": "cyan",
+            "color": "black",
+            "display": "inline",
+            "float": "right",
+            "margin": "5px",
+            "padding": "5px",
+          }
+        }
+      >
+        <a
+          href="/signup"
+          onClick={[Function]}
+          style={
+            Object {
+              "textDecoration": "none",
+            }
+          }
+        >
+          Sign Up
+        </a>
+      </li>
+      <li
+        style={
+          Object {
+            "backgroundColor": "cyan",
+            "color": "black",
+            "display": "inline",
+            "float": "right",
+            "margin": "5px",
+            "padding": "5px",
+          }
+        }
+      >
+        <a
+          href="/login"
+          onClick={[Function]}
+          style={
+            Object {
+              "textDecoration": "none",
+            }
+          }
+        >
+          Login
+        </a>
+      </li>
+    </ul>
+  </div>
+  <form
+    style={
+      Object {
+        "backgroundColor": "white",
+        "border": "15px solid blueviolet",
+        "color": "Black",
+        "display": "inline-block",
+        "margin": "20px",
+        "padding": "10px",
+        "width": "400px",
+      }
+    }
+  >
+    <h1>
+      Login
+    </h1>
+    <h3>
+      Enter the User Name 
+    </h3>
+    <input
+      name="username"
+      onBlur={[Function]}
+      onChange={[Function]}
+      required={true}
+      type="text"
+    />
+    <h3>
+      Enter the Password 
+    </h3>
+    <input
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      required={true}
+      type="password"
+    />
+    
+    <br />
+    <br />
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "cyan",
+        }
+      }
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</div>
+`;
